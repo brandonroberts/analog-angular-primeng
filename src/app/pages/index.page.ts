@@ -1,49 +1,40 @@
 import { Component } from '@angular/core';
+import { AccordionModule } from 'primeng/accordion';
 
 @Component({
   selector: 'app-home',
   standalone: true,
+  imports: [
+    AccordionModule,
+  ],
   template: `
-    <div>
-      <a href="https://analogjs.org/" target="_blank">
-        <img alt="Analog Logo" class="logo analog" src="/analog.svg" />
-      </a>
-    </div>
-
-    <h2>Analog</h2>
-
-    <h3>The fullstack meta-framework for Angular!</h3>
-
-    <div class="card">
-      <button type="button" (click)="increment()">Count {{ count }}</button>
-    </div>
-
-    <p class="read-the-docs">
-      For guides on how to customize this project, visit the
-      <a href="https://analogjs.org" target="_blank">Analog documentation</a>
-    </p>
+  <button (click)="activeIndex = 1">1</button>
+  <p-accordion [activeIndex]="activeIndex">
+      <p-accordionTab header="Header I">
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+      </p-accordionTab>
+      <p-accordionTab header="Header II">
+          <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+              ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
+          </p>
+      </p-accordionTab>
+      <p-accordionTab header="Header III">
+          <p>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
+              qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+          </p>
+      </p-accordionTab>
+  </p-accordion>
   `,
   styles: [
     `
-      .logo {
-        will-change: filter;
-      }
-      .logo:hover {
-        filter: drop-shadow(0 0 2em #646cffaa);
-      }
-      .logo.angular:hover {
-        filter: drop-shadow(0 0 2em #42b883aa);
-      }
-      .read-the-docs {
-        color: #888;
-      }
     `,
   ],
 })
 export default class HomeComponent {
-  count = 0;
-
-  increment() {
-    this.count++;
-  }
+    activeIndex = 0
 }

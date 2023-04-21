@@ -9,6 +9,9 @@ export default defineConfig(({ mode }) => ({
   build: {
     target: ['es2020'],
   },
+  ssr: {
+    noExternal: ['primeng/**'],
+  },
   resolve: {
     mainFields: ['module'],
   },
